@@ -1,0 +1,29 @@
+
+* What problem is your project solving?
+    The project aims to identify what's trending amongst the users one follows on Twitter,
+     providing a more personalized trending topic list compared to the general Twitter trends.
+    
+* What data or inputs do you need?
+    The inputs are the twitter user's credentials and a list of the Twitter accounts the user follows
+* Who would use your finished product?
+    The average twitter user interested
+* What will be outputted for the user?
+    The the most frequently used hash tags from the accounts the user follows
+* What is the smallest piece you can build that would be useful?
+    Our project scope currently is the MVP.
+* How do the inputs become outputs?
+    1. Authentic the user's twitter account via the API
+    2. Fetch the most recent tweets from the accounts the user follows 
+    3. Extract hashtags from the stated tweets 
+    4. Count frequency of hashtags to determine popularity
+    5. Return the top hashtags and their counts as the trending topics.
+* What are other aspects you can build that add value?	
+    Adding a front-end: a basic web interface to display the user's data. 
+* What pieces of technology will your project use (API, database, etc)?
+    API (twitter API), database (user's following list)
+
+API integration
+Creation, Querying, and Updating of Databases
+Adherence to PEP8 style
+A clear testing plan and appropriate unit tests
+Github Continuous Integration Automation for Style Checkers and Unit Tests
