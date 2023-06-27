@@ -37,7 +37,7 @@ def main():
     access_token = os.getenv('TWITTER_ACCESS_TOKEN')
     access_token_secret = os.getenv('TWITTER_ACCESS_TOKEN')
     api = authenticate_twitter_api(consumer_key, consumer_secret, access_token, access_token_secret)
-    user_tweets =  get_trending_hashtags(api, 'jack')
+    user_tweets =  get_trending_hashtags(api, 'jacks')
 
     trends = get_trending_hashtags(user_tweets)
     print("Top Trending hashtags")
