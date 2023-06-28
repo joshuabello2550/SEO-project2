@@ -13,12 +13,12 @@ def authenticate_twitter_api(consumer_key, consumer_secret, access_token, access
     return api
 
 def get_user_timeline(api, screen_name):
-    tweets = api.user_timeline(screen_name=screen_name, count=200, tweet_mod='extended')
+    tweets = api.user_timeline(screen_name=screen_name, count=20)
     data=[]
     for tweet in tweets:
-        hashtags = [h['text']] for h in tweeet.entities['hashtags']
+        hashtags = [h['text'] for h in tweeet.entities['hashtags']]
         data.append({
-            'id': tweet.id_str
+            'id': tweet.id_str,
             'created_at': tweet.created_at,
             'text': tweet.full_text,
             'hashtags': hashtags,
@@ -30,15 +30,15 @@ def get_trending_hashtags(df):
     counter = Counter(all_hashtags)
     return counter.most_common(10)
 
-def main():
-
+if __name__=="__main__":
     consumer_key = os.getenv('TWITTER_CONSUMER_KEY')
     consumer_secret = os.getenv('TWITTER_CONSUMER_SECRET')
     access_token = os.getenv('TWITTER_ACCESS_TOKEN')
-    access_token_secret = os.getenv('TWITTER_ACCESS_TOKEN')
+    access_token_secret = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
     api = authenticate_twitter_api(consumer_key, consumer_secret, access_token, access_token_secret)
-    user_tweets =  get_trending_hashtags(api, 'jacks')
-
+    print("testing")
+    user_tweets =  get_user_timeline(api, 'UWHS75819288')
+    
     trends = get_trending_hashtags(user_tweets)
     print("Top Trending hashtags")
     for hashtag, count in trends:

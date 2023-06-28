@@ -27,3 +27,8 @@ Creation, Querying, and Updating of Databases
 Adherence to PEP8 style
 A clear testing plan and appropriate unit tests
 Github Continuous Integration Automation for Style Checkers and Unit Tests
+
+
+Notes:
+* Ask about pushing to github
+* Ask about 401 unauthorized error
